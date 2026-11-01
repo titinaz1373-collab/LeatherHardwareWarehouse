@@ -16,7 +16,7 @@ jobs:
           ZIP=$(find . -maxdepth 1 -name '*.zip' | head -n 1)
           unzip -q "$ZIP" -d /tmp/android-project
           cp -a /tmp/android-project/. .
-
+          gunzip -k app/src/main/assets/models.json.gz
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
